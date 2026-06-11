@@ -1,1 +1,95 @@
-airfryer
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zıplayan ve Dönen Airfryer</title>
+    <style>
+        /* CSS KODLARI BURADA BAŞLIYOR */
+        
+        /* Sayfa ortalama ve arka plan */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f4f6;
+            overflow: hidden;
+        }
+
+        /* Animasyonun gerçekleşeceği alan */
+        .sahne {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Airfryer Görseli ve Animasyonları */
+        .airfryer {
+            width: 200px; /* Görsel boyutu */
+            height: auto;
+            z-index: 2;
+            /* Hem zıplama hem dönme animasyonunu aynı anda çalıştırıyoruz */
+            animation: zipla 0.8s ease-in-out infinite alternate, 
+                       don 2s linear infinite;
+        }
+
+        /* Alt kısımdaki gölge efekti */
+        .gölge {
+            width: 140px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            margin-top: 20px;
+            filter: blur(5px);
+            z-index: 1;
+            /* Gölge de zıplama ile senkronize büyüyüp küçülüyor */
+            animation: golgeBoyut 0.8s ease-in-out infinite alternate;
+        }
+
+        /* ZIPLAMA ANIMASYONU */
+        @keyframes zipla {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-150px); /* Havaya kalkış mesafesi */
+            }
+        }
+
+        /* KENDİ EKSENİNDE DÖNME ANIMASYONU */
+        @keyframes don {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* GÖLGE ANIMASYONU */
+        @keyframes golgeBoyut {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(0.5);
+                opacity: 0.2; /* Yukarı çıktıkça gölge solar */
+            }
+        }
+        
+        /* CSS KODLARI BURADA BİTTİ */
+    </style>
+</head>
+<body>
+
+    <div class="sahne">
+        <img src="https://i.hizliresim.com/o3yw0z6.jpeg" alt="Zıplayan Airfryer" class="airfryer">
+        <div class="gölge"></div>
+    </div>
+
+</body>
+</html>
