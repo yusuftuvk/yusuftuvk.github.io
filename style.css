@@ -1,0 +1,56 @@
+/* Genel Sayfa Ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a; /* Koyu, asil bir arka plan */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    perspective: 1000px; /* 3D derinlik hissi için */
+}
+
+/* Dönüş Alanı */
+.dönen-kutu {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: dondur 10s linear infinite; /* Sonsuz dönüş animasyonu */
+}
+
+/* Alt Alta Dizilen Kelimeler */
+.dönen-kutu span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ff3366; /* Dikkat çekici bir sitem rengi :) */
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
+    
+    /* Kelimeleri Y ekseninde (alt alta görünecek şekilde) 3D boşluğa dağıtıyoruz */
+    transform: rotateY(calc(var(--i) * 90deg)) translateZ(150px);
+}
+
+/* Dönme Animasyonu */
+@keyframes dondur {
+    0% {
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+}
