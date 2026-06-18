@@ -1,1 +1,11 @@
-<p style="background-image: url('https://pbs.twimg.com/media/HLBY5GdXUAAHH21?format=jpg&name=medium');">
+<script>
+  const backgrounds = [
+    'https://i.hizliresim.com/mhwcwcz.jpeg',
+    'https://i.hizliresim.com/qxar2ag.jpg'
+  ];
+  const random = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+  document.body.style.backgroundImage = 'url("' + random + '")';
+  document.body.style.backgroundSize = 'cover';
+  document.body.style.backgroundPosition = 'center';
+  document.body.style.backgroundRepeat = 'no-repeat';
+</script>
