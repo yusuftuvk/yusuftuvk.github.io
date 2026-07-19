@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Ortalanmış Resim</title>
+<title>i</title>
 <style>
   .center-image {
     display: block;
@@ -15,8 +16,46 @@
 </style>
 </head>
 <body>
-
 <img src="dortbesalti.jpg" alt="Description" class="center-image">
 
+<script>
+  const hedefKelime = "inşaat";
+  let index = 1; // "i" harfinden başlıyoruz, o yüzden 1'den başlıyoruz
+  let siliniyor = false;
+  const yazmaHizi = 250;   // harf yazma hızı (ms)
+  const silmeHizi = 150;   // harf silme hızı (ms)
+  const bekleme = 800;     // tam yazıldıktan sonra bekleme (ms)
+
+  function baslikAnimasyonu() {
+    if (!siliniyor) {
+      // Yazma aşaması: i -> in -> inş -> inşa -> inşaa -> inşaat
+      document.title = hedefKelime.substring(0, index);
+      index++;
+
+      if (index > hedefKelime.length) {
+        // Kelime tamamlandı, biraz bekleyip silmeye başla
+        siliniyor = true;
+        setTimeout(baslikAnimasyonu, bekleme);
+        return;
+      }
+      setTimeout(baslikAnimasyonu, yazmaHizi);
+    } else {
+      // Silme aşaması: inşaat -> inşaa -> ... -> boş
+      index--;
+      document.title = hedefKelime.substring(0, index);
+
+      if (index <= 0) {
+        // Tamamen silindi, tekrar baştan başla (loop)
+        siliniyor = false;
+        index = 1;
+        setTimeout(baslikAnimasyonu, bekleme);
+        return;
+      }
+      setTimeout(baslikAnimasyonu, silmeHizi);
+    }
+  }
+
+  window.onload = baslikAnimasyonu;
+</script>
 </body>
 </html>
