@@ -1,56 +1,63 @@
 <!DOCTYPE html>
-
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>i</title>
 <style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 16px;
+  }
   .center-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    /* Küçük ekranlarda taşmayı önler */
     max-width: 100%;
     height: auto;
+  }
+  .btn-wrapper {
+    display: block;
+    margin: 12px auto 0 auto;
+    width: 240px;
+    max-width: 90%;
+  }
+  .btn-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 </style>
 </head>
 <body>
 <img src="dortbesalti.jpg" alt="Description" class="center-image">
-
-
-
-
-<a href="https://benikariyagotur.com/yusuftuvk"><img src="https://benikariyagotur.com/button-lg.png" alt="beni karıya götür" width="240"></a>
-  
+<a href="https://benikariyagotur.com/zrafei-sanalm" class="btn-wrapper">
+  <img src="https://benikariyagotur.com/button-lg.png" alt="beni karıya götür">
+</a>
 <script>
   const hedefKelime = "inşaat";
-  let index = 1; // "i" harfinden başlıyoruz, o yüzden 1'den başlıyoruz
+  let index = 1;
   let siliniyor = false;
-  const yazmaHizi = 250;   // harf yazma hızı (ms)
-  const silmeHizi = 150;   // harf silme hızı (ms)
-  const bekleme = 800;     // tam yazıldıktan sonra bekleme (ms)
-
+  const yazmaHizi = 250;
+  const silmeHizi = 150;
+  const bekleme = 800;
   function baslikAnimasyonu() {
     if (!siliniyor) {
-      // Yazma aşaması: i -> in -> inş -> inşa -> inşaa -> inşaat
       document.title = hedefKelime.substring(0, index);
       index++;
-
       if (index > hedefKelime.length) {
-        // Kelime tamamlandı, biraz bekleyip silmeye başla
         siliniyor = true;
         setTimeout(baslikAnimasyonu, bekleme);
         return;
       }
       setTimeout(baslikAnimasyonu, yazmaHizi);
     } else {
-      // Silme aşaması: inşaat -> inşaa -> ... -> boş
       index--;
       document.title = hedefKelime.substring(0, index);
-
       if (index <= 0) {
-        // Tamamen silindi, tekrar baştan başla (loop)
         siliniyor = false;
         index = 1;
         setTimeout(baslikAnimasyonu, bekleme);
@@ -59,7 +66,6 @@
       setTimeout(baslikAnimasyonu, silmeHizi);
     }
   }
-
   window.onload = baslikAnimasyonu;
 </script>
 </body>
