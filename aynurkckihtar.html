@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazılı Uyarı ve Davet İhtarnamesi</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 40px 20px;
+            color: #2b2b2b;
+        }
+        .document-card {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #dcdcdc;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 50px 60px;
+            box-sizing: border-box;
+            border-top: 6px solid #1a365d;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #1a365d;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 20pt;
+            letter-spacing: 1px;
+            color: #1a365d;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+        .header p {
+            font-size: 10pt;
+            color: #666;
+            margin: 0;
+            font-style: italic;
+        }
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+        .meta-table td {
+            padding: 10px 15px;
+            font-size: 11pt;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .meta-table td.label {
+            font-weight: bold;
+            width: 30%;
+            color: #2d3748;
+        }
+        .content {
+            font-size: 12pt;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 40px;
+        }
+        .content p {
+            margin-bottom: 15px;
+        }
+        .warning-text {
+            font-weight: bold;
+            color: #1a365d;
+        }
+        .signature-section {
+            width: 100%;
+            margin-top: 50px;
+            border-collapse: collapse;
+        }
+        .signature-box {
+            width: 50%;
+            vertical-align: top;
+            padding: 0 15px;
+        }
+        .signature-title {
+            font-weight: bold;
+            font-size: 11pt;
+            color: #1a365d;
+            text-transform: uppercase;
+            border-bottom: 1px solid #cbd5e0;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .signature-details {
+            font-size: 11pt;
+            line-height: 1.6;
+        }
+        .signature-space {
+            height: 50px;
+        }
+        .note {
+            font-size: 9pt;
+            color: #718096;
+            font-style: italic;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="document-card">
+        <div class="header">
+            <h1>Yazılı Uyarı ve Davet İhtarnamesi</h1>
+            <p>Resmî Bildirim Metni</p>
+        </div>
+
+        <table class="meta-table">
+            <tr>
+                <td class="label">Tarih:</td>
+                <td>21 Temmuz 2026</td>
+            </tr>
+            <tr>
+                <td class="label">Konu:</td>
+                <td>Kahve Molası Katılım Mükellefiyeti ve Stres Yönetimi Hk.</td>
+            </tr>
+            <tr>
+                <td class="label">ALICI (Stajyer):</td>
+                <td>Aynur Kocakaya</td>
+            </tr>
+            <tr>
+                <td class="label">GÖNDEREN (Big Boss):</td>
+                <td>Yusuf Çınar Türk</td>
+            </tr>
+        </table>
+
+        <div class="content">
+            <p><strong>Sayın Aynur Kocakaya,</strong></p>
+            <p>Yapılan son incelemelerde, ekiple kahve içme faaliyetlerine katılım sağlama noktasında imtina ettiğiniz tespit edilmiştir.</p>
+            <p>Tarafımıza ayrılacak <strong>3-4 saatlik</strong> bir sürenin derslerinize ve akademik aksamalarınıza sebebiyet vermeyeceği; aksine mevcut stres seviyenizi düşürerek çalışma veriminizi artıracağı öngörülmektedir.</p>
+            <p>Bu doğrultuda, söz konusu kahve davetine haksız direnç ve naz göstermeksizin katılım sağlamanız hususu önemle <span class="warning-text">ihtar olunur.</span></p>
+        </div>
+
+        <table class="signature-section">
+            <tr>
+                <td class="signature-box">
+                    <div class="signature-title">Tebliğ Eden (Big Boss)</div>
+                    <div class="signature-details">
+                        <strong>Yusuf Çınar Türk</strong><br>
+                        Tarih: 21 Temmuz 2026
+                    </div>
+                    <div class="signature-space"></div>
+                    <div>İmza: .......................................</div>
+                </td>
+                <td class="signature-box">
+                    <div class="signature-title">Tebellüğ Eden (Stajyer)</div>
+                    <div class="signature-details">
+                        <strong>Aynur Kocakaya</strong><br>
+                        Tarih: 21 Temmuz 2026
+                    </div>
+                    <div class="signature-space"></div>
+                    <div>İmza: .......................................</div>
+                    <div class="note">(Kendi el yazısıyla "Tebliğ aldım, kahveye geliyorum" yazılmalıdır)</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
